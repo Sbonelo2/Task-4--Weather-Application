@@ -19,9 +19,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-.Navbar , a {
+/* .Navbar , a {
 color: white;
-}
+} */
 /* .Search{
   margin-top: 10%;
   margin-left: 3%;
@@ -79,3 +79,33 @@ color: white;
 .Search .btn:active {
   transform: scale(0.98);
 }
+
+.Navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.Navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.Navbar a:hover {
+  color: #00bfff;
+}
+
+
+@media screen and (max-width: 768px) {
+  .Navbar {
+    flex-direction: column;
+  }
+  .Navbar a {
+    padding: 1rem;
+  }
+}
+
