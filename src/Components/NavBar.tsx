@@ -16,10 +16,10 @@ export default function Navbar() {
       }}
     >
       <Link to="/Home">Home</Link>
-      <Link to="/jobs">Jobs</Link>
-      <Link to="/Page404">Page404</Link>
-      <Link to="/Registration">Registration</Link>
-      <Link to="/Login">Login</Link>
+      <Link to="/Weather">Weather</Link>
+      <Link to="/Maps">Maps</Link>
+      <Link to="/Hourly">Hourly</Link>
+      <Link to="/Monthly">Monthly</Link>
     </div>
   );
 }

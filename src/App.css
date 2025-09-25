@@ -19,3 +19,6 @@ body {
   align-items: center;
   justify-content: center;
 }
+.Navbar , a {
+color: white;
+}
