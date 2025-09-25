@@ -1,9 +1,7 @@
 import React from 'react'
 
 export default function Maps() {
-  return (
-    <div>
-      
-    </div>
-  )
+    return <div>
+        
+        Maps..........</div>;
 }

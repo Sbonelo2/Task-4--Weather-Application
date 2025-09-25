@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom"; 
+
 export default function Navbar() {
   return (
-    <div
+    <nav
       className="Navbar"
       style={{
         backgroundColor: "black",
@@ -12,14 +13,20 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
-        // flexWrap: "wrap",
       }}
     >
-      <Link to="/Home">Home</Link>
-      <Link to="/Weather">Weather</Link>
-      <Link to="/Maps">Maps</Link>
-      <Link to="/Hourly">Hourly</Link>
-      <Link to="/Monthly">Monthly</Link>
-    </div>
+      <Link to="/weather" style={{ color: "white", textDecoration: "none" }}>
+        Weather
+      </Link>
+      <Link to="/maps" style={{ color: "white", textDecoration: "none" }}>
+        Maps
+      </Link>
+      <Link to="/hourly" style={{ color: "white", textDecoration: "none" }}>
+        Hourly
+      </Link>
+      <Link to="/monthly" style={{ color: "white", textDecoration: "none" }}>
+        Monthly
+      </Link>
+    </nav>
   );
 }

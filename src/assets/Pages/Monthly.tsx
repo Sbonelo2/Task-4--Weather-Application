@@ -1,9 +1,5 @@
 import React from 'react'
 
 export default function Monthly() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div>Monthly.............</div>;
 }

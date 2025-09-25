@@ -11,7 +11,7 @@ export default function Footer() {
         marginTop: "56.5rem",
       }}
     >
-      <p>&copy;2025 cbonelo224@gmail.com</p>
+      <p>&copy;2025 Weatherservices</p>
     </div>
   );
 }

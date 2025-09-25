@@ -22,3 +22,60 @@ body {
 .Navbar , a {
 color: white;
 }
+/* .Search{
+  margin-top: 10%;
+  margin-left: 3%;
+  justify-content: center;
+} */
+
+.Search {
+  max-width: 400px;
+  margin: 50px auto;       
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.Search h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.Search input {
+  width: 80%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.Search input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(92, 153, 117, 0.5);
+}
+
+.Search .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1b7745;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.Search .btn:hover {
+  background-color: #3a0f42;
+}
+
+.Search .btn:active {
+  transform: scale(0.98);
+}
