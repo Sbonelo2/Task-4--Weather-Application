@@ -18,16 +18,16 @@ export default function Navbar() {
       <Link to="/weather" style={{ color: "white", textDecoration: "none" }}>
         Weather
       </Link>
-      <Link to="/maps" style={{ color: "white", textDecoration: "none" }}>
-        Maps
-      </Link>
       <Link to="/hourly" style={{ color: "white", textDecoration: "none" }}>
         Hourly
       </Link>
       <Link to="/monthly" style={{ color: "white", textDecoration: "none" }}>
         Monthly
       </Link>
+      <Link to="/maps" style={{ color: "white", textDecoration: "none" }}>
+        Maps
+      </Link>
     </nav>
-    );
+  );
   }
 
