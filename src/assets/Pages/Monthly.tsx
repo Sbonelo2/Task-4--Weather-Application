@@ -3,22 +3,24 @@ import React, { useState } from "react";
 export default function Weather() {
   const [city, setCity] = useState("");
 
+  
   type WeatherData = {
     name: string;
     sys: { country: string };
     main: { temp: number; humidity: number };
     wind: { speed: number };
-    weather: { description: string }[];
+    weather: { description: string; icon: string }[];
   };
 
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState("");
 
-  // ✅ Make sure this is your full valid API key from OpenWeatherMap
-  const API_KEY = "9b4c3c2265e16b5b59c568c9550648e1";
+  
+  const API_KEY = "0c3c4537724ac48515517f438aa791cf";
+
 
   const getWeather = async () => {
-    if (!city) {
+    if (!city.trim()) {
       setError("Please enter a city");
       return;
     }
@@ -40,17 +42,15 @@ export default function Weather() {
       const data = await res.json();
       setWeather(data);
     } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("An unexpected error occurred");
-      }
+      setError(
+        err instanceof Error ? err.message : "An unexpected error occurred"
+      );
     }
   };
 
   return (
     <div className="weather-container">
-      <h2>Search Weather by City</h2>
+      <h2>Search Weather by your fav City</h2>
       <div className="search-box">
         <input
           type="text"
@@ -69,10 +69,19 @@ export default function Weather() {
           <h3>
             {weather.name}, {weather.sys?.country}
           </h3>
-          <p>🌡️ Temperature: {weather.main?.temp}°C</p>
-          <p>💧 Humidity: {weather.main?.humidity}%</p>
-          <p>🌬️ Wind Speed: {weather.wind?.speed} m/s</p>
-          <p>☁️ Condition: {weather.weather?.[0]?.description}</p>
+
+          <div className="weather-main">
+            <img
+              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+              alt={weather.weather[0].description}
+            />
+            <div className="weather-text">
+              <p>☁️ {weather.weather[0].description}</p>
+              <p>🌡️ Temperature: {weather.main.temp}°C</p>
+              <p>💧 Humidity: {weather.main.humidity}%</p>
+              <p>🌬️ Wind Speed: {weather.wind.speed} m/s</p>
+            </div>
+          </div>
         </div>
       )}
     </div>

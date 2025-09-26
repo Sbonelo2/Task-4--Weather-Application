@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function Weather() {
   return (
@@ -9,8 +9,3 @@ export default function Weather() {
     </div>
   );
 }
-
-
-
-
-
