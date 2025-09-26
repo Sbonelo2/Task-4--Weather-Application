@@ -8,7 +8,7 @@ export default function Weather() {
     sys: { country: string };
     main: { temp: number; humidity: number };
     wind: { speed: number };
-    weather: { description: string; icon: string }[];
+    weather: { description: string; icon: string; main: string }[];
   };
 
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -38,6 +38,7 @@ export default function Weather() {
 
       const data = await res.json();
       setWeather(data);
+      console.log(data);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unexpected error occurred"
@@ -63,21 +64,33 @@ export default function Weather() {
 
       {weather && (
         <div className="weather-info">
-          <h3>
+          <div className="weather-header">
             {weather.name}, {weather.sys?.country}
-          </h3>
-
-          <div className="weather-main">
-            <img
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-              alt={weather.weather[0].description}
-            />
-            <div className="weather-text">
-              <p>☁️ {weather.weather[0].description}</p>
-              <p>🌡️ Temperature: {weather.main.temp}°C</p>
-              <p>💧 Humidity: {weather.main.humidity}%</p>
-              <p>🌬️ Wind Speed: {weather.wind.speed} m/s</p>
+          </div>
+          <div
+            className="weather-main"
+            style={
+              weather.weather[0].main === "Clear"
+                ? { backgroundColor: "yellow" }
+                : {
+                    background: "linear-gradient(90deg, #334D50, #CBCAA5)",
+                  }
+            }
+          >
+            <div className="img-container">
+              <img
+                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                alt={weather.weather[0].description}
+                width="100%"
+              />
             </div>
+          </div>
+
+          <div className="weather-footer">
+            <p>☁️ {weather.weather[0].description}</p>
+            <p>🌡️ Temperature: {weather.main.temp}°C</p>
+            <p>💧 Humidity: {weather.main.humidity}%</p>
+            <p>🌬️ Wind Speed: {weather.wind.speed} m/s</p>
           </div>
         </div>
       )}
