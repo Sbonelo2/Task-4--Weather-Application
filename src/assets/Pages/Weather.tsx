@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function Weather() {
   const [city, setCity] = useState("");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   type WeatherData = {
     name: string;
@@ -38,7 +39,6 @@ export default function Weather() {
 
       const data = await res.json();
       setWeather(data);
-      console.log(data);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unexpected error occurred"
@@ -46,9 +46,36 @@ export default function Weather() {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  const containerStyle =
+    theme === "dark"
+      ? {
+          backgroundColor: "#1e1e1e",
+          color: "#f5f5f5",
+          minHeight: "100vh",
+          padding: "20px",
+        }
+      : {
+          backgroundColor: "#ffffff",
+          color: "#333",
+          minHeight: "100vh",
+          padding: "20px",
+        };
+
   return (
-    <div className="weather-container">
+    <div style={containerStyle}>
       <h2>Search Weather by your fav City</h2>
+      <button onClick={toggleTheme} style={{
+        marginBottom: "10px",
+        background: "black",
+        color: "white",
+       }}>
+         {theme === "light" ? "Dark" : "Light"} Mode
+      </button>
+
       <div className="search-box">
         <input
           type="text"

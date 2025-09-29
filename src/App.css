@@ -98,7 +98,7 @@ color: white;
   color: #00bfff;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 650px) {
   .Navbar {
     flex-direction: column;
   }
@@ -401,4 +401,38 @@ color: white;
 }
 .weather-footer {
   font-weight: bold;
+ 
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+.light .button {
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 12px;
+}
+
+.light .button:hover {
+  background-color: #e0e0e0;
+}
+
+
+.dark .button {
+  background-color: #333;
+  color: #f0f0f0;
+  border-radius: 12px;
+}
+
+.dark .button:hover {
+  background-color: #3b0e66;
+  border-radius: 12px;
 }
