@@ -1,4 +1,4 @@
-# ☀️ Advanced Weather Application
+# ☀️  Weather Application
 
 A modern, feature-rich weather application built with React, TypeScript, and Vite. Get comprehensive weather information with an intuitive and beautiful user interface.
 
