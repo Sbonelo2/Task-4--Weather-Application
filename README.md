@@ -92,8 +92,19 @@ A modern, feature-rich weather application built with React, TypeScript, and Vit
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd Task-4--Weather-Application-6
+ # Clone the repository using HTTPS
+git clone https://github.com/Sbonelo2/Task-4--Weather-Application)r.git
+
+
+# Or clone using SSH (if you have SSH keys set up)
+
+git clone https://github.com/Sbonelo2/Task-4--Weather-Application)r.git
+
+
+# Navigate into the project directory
+cd Task-4--Weather-Application
+
+ 
    ```
 
 2. **Install dependencies**
