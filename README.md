@@ -92,12 +92,7 @@ A modern, feature-rich weather application built with React, TypeScript, and Vit
 
 1. **Clone the repository**
    ```bash
- # Clone the repository using HTTPS
-git clone https://github.com/Sbonelo2/Task-4--Weather-Application)r.git
-
-
-# Or clone using SSH (if you have SSH keys set up)
-
+ # Clone the repository 
 git clone https://github.com/Sbonelo2/Task-4--Weather-Application)r.git
 
 
