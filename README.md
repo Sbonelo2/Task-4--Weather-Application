@@ -95,12 +95,15 @@ git clone https://github.com/Sbonelo2/Task-4--Weather-Application
 
 
 # Navigate into the project directory
+
+
 cd Task-4--Weather-Application
 
  
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
