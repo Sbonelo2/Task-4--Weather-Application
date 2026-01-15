@@ -95,8 +95,11 @@ A cutting-edge, feature-rich weather application built with React 19, TypeScript
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/Task-4--Weather-Application-7.git
-   cd Task-4--Weather-Application-7
+   # Clone the repository using HTTPS
+   git clone https://github.com/Sbonelo2/Task-4--Weather-Application.git
+   
+   # Navigate into the project directory
+   cd Task-4--Weather-Application
    ```
 
 2. **Install dependencies**
@@ -342,7 +345,7 @@ weather-app/
 - **Graceful Degradation**: Fallbacks for older browsers
 - **Offline Support**: Basic functionality with service worker (future)
 
-## � Development Guidelines
+## 🛠️ Development Guidelines
 
 ### Code Standards
 - **TypeScript**: Strict mode enabled for type safety
@@ -449,3 +452,5 @@ Built with ❤️ by the Weather App Development Team using cutting-edge web tec
 **⭐ Star this repository if you find it helpful!**
 
 *Last updated: January 2026*
+
+<img src="https://socialify.git.ci/Sbonelo2/Task-4--Weather-Application/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="Task-4--Weather-Application" width="640" height="320" />
