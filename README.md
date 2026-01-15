@@ -130,7 +130,8 @@ A cutting-edge, feature-rich weather application built with React 19, TypeScript
    ```
 
 5. **Open your browser**
-   Navigate to `http://localhost:5173` (or the URL shown in your terminal)
+   Navigate to
+   #`http://localhost:5173` 
 
 ### Development Commands
 
