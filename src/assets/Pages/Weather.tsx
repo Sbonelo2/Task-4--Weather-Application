@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export default function Weather() {
   const [city, setCity] = useState("");
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const { theme } = useTheme();
   const [loading, setLoading] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
 
@@ -117,10 +118,6 @@ export default function Weather() {
     return colors[aqi - 1] || "#999";
   };
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
   const getWindDirection = (deg: number) => {
     const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
     return directions[Math.round(deg / 45) % 8];
@@ -144,19 +141,7 @@ export default function Weather() {
   return (
     <div style={containerStyle}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <h2>Advanced Weather Search</h2>
-          <button onClick={toggleTheme} style={{
-            padding: "10px 20px",
-            background: theme === "dark" ? "#fff" : "#000",
-            color: theme === "dark" ? "#000" : "#fff",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer",
-          }}>
-            {theme === "light" ? "🌙 Dark" : "☀️ Light"} Mode
-          </button>
-        </div>
+        <h2>Advanced Weather Search</h2>
 
         <div className="search-box">
           <input

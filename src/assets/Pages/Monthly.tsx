@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTheme } from "../../contexts/ThemeContext";
 
 type DailyItem = {
   dt: number;
@@ -18,6 +19,7 @@ type CityData = {
 };
 
 export default function Monthly() {
+  const { theme } = useTheme();
   const [city, setCity] = useState("");
   const [daily, setDaily] = useState<DailyItem[]>([]);
   const [cityData, setCityData] = useState<CityData | null>(null);
@@ -82,8 +84,22 @@ export default function Monthly() {
     return { label: "Extreme", color: "#8f3f97" };
   };
 
+  const themeStyles = {
+    background: theme === "dark" ? "#1e1e1e" : "#ffffff",
+    color: theme === "dark" ? "#f5f5f5" : "#000000",
+    cardBackground: theme === "dark" ? "#2a2a2a" : "#f8f9fa",
+    borderColor: theme === "dark" ? "#444" : "#ddd",
+    inputBackground: theme === "dark" ? "#333" : "#fff",
+    inputColor: theme === "dark" ? "#fff" : "#000",
+  };
+
   return (
-    <div className="forecast-container" style={{ minHeight: "100vh", paddingBottom: "40px" }}>
+    <div className="forecast-container" style={{ 
+      minHeight: "100vh", 
+      paddingBottom: "40px",
+      background: themeStyles.background,
+      color: themeStyles.color
+    }}>
       <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", fontSize: "2.5rem", marginBottom: "2rem" }}>
           📅 7-Day Weather Forecast
