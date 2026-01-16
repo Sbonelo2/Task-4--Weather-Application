@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useTheme } from "../../contexts/ThemeContext";
 
 type WeatherData = {
   name: string;
@@ -11,7 +10,6 @@ type WeatherData = {
 };
 
 export default function Home() {
-  const { theme } = useTheme();
   const [currentWeather, setCurrentWeather] = useState<WeatherData | null>(null);
   const [favoriteWeathers, setFavoriteWeathers] = useState<WeatherData[]>([]);
   const [loading, setLoading] = useState(false);
@@ -84,36 +82,28 @@ export default function Home() {
     return "Good Evening";
   };
 
-  const themeStyles = {
-    background: theme === "dark" ? "#1e1e1e" : "#ffffff",
-    color: theme === "dark" ? "#f5f5f5" : "#000000",
-    cardBackground: theme === "dark" ? "#2a2a2a" : "#ffffff",
-    borderColor: theme === "dark" ? "#444" : "#000000",
-    boxShadow: theme === "dark" ? "0 4px 20px rgba(255,255,255,0.1)" : "0 4px 20px rgba(0,0,0,0.1)",
-  };
-
   return (
     <div style={{
       minHeight: "100vh",
-      background: themeStyles.background,
+      background: "#ffffff",
       padding: "40px 20px",
     }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* Hero Section */}
         <div style={{
           textAlign: "center",
-          color: themeStyles.color,
+          color: "#000",
           marginBottom: "40px",
           padding: "40px 20px",
-          background: themeStyles.cardBackground,
+          background: "#fff",
           borderRadius: "20px",
-          boxShadow: themeStyles.boxShadow,
-          border: `2px solid ${themeStyles.borderColor}`,
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+          border: "2px solid #000",
         }}>
-          <h1 style={{ fontSize: "3.5rem", margin: "0 0 10px 0", fontWeight: "bold", color: themeStyles.color }}>
+          <h1 style={{ fontSize: "3.5rem", margin: "0 0 10px 0", fontWeight: "bold", color: "#000" }}>
             ☀️ Weather App
           </h1>
-          <p style={{ fontSize: "1.5rem", color: theme === "dark" ? "#ccc" : "#333" }}>
+          <p style={{ fontSize: "1.5rem", color: "#333" }}>
             {getGreeting()}! Check the weather anywhere in the world
           </p>
         </div>
@@ -121,13 +111,13 @@ export default function Home() {
         {/* Current Location Weather */}
         {loading && (
           <div style={{
-            background: themeStyles.cardBackground,
+            background: "#fff",
             borderRadius: "20px",
             padding: "40px",
             textAlign: "center",
             marginBottom: "30px",
-            boxShadow: themeStyles.boxShadow,
-            border: `2px solid ${themeStyles.borderColor}`,
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+            border: "2px solid #000",
           }}>
             <div style={{
               border: "4px solid #e0e0e0",
@@ -138,20 +128,20 @@ export default function Home() {
               animation: "spin 1s linear infinite",
               margin: "0 auto 20px",
             }} />
-            <p style={{ color: themeStyles.color }}>Getting your location weather...</p>
+            <p style={{ color: "#000" }}>Getting your location weather...</p>
           </div>
         )}
 
         {locationError && (
           <div style={{
-            background: themeStyles.cardBackground,
+            background: "#fff",
             borderRadius: "20px",
             padding: "20px",
             textAlign: "center",
             marginBottom: "30px",
-            color: themeStyles.color,
-            boxShadow: themeStyles.boxShadow,
-            border: `2px solid ${themeStyles.borderColor}`,
+            color: "#000",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+            border: "2px solid #000",
           }}>
             {locationError}
           </div>
@@ -159,13 +149,13 @@ export default function Home() {
 
         {currentWeather && !loading && (
           <div style={{
-            background: theme === "dark" ? "#000" : "#f8f9fa",
+            background: "#000",
             borderRadius: "20px",
             padding: "40px",
             marginBottom: "40px",
-            color: theme === "dark" ? "white" : "#000",
-            boxShadow: themeStyles.boxShadow,
-            border: `2px solid ${themeStyles.borderColor}`,
+            color: "white",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+            border: "2px solid #000",
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
               <div>

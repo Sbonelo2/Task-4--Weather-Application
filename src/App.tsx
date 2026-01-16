@@ -7,27 +7,24 @@ import Hourly from "./assets/Pages/Hourly";
 import Maps from "./assets/Pages/Maps";
 import Monthly from "./assets/Pages/Monthly";
 import Weather from "./assets/Pages/Weather";
-import { ThemeProvider } from "./contexts/ThemeContext";
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router>
-        <Navbar />
+    <Router>
+      <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/weather" element={<Weather />} />
-          <Route path="/maps" element={<Maps />} />
-          <Route path="/hourly" element={<Hourly />} />
-          <Route path="/monthly" element={<Monthly />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path="/maps" element={<Maps />} />
+        <Route path="/hourly" element={<Hourly />} />
+        <Route path="/monthly" element={<Monthly />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
 
-        <Footer />
-      </Router>
-    </ThemeProvider>
+      <Footer />
+    </Router>
   );
 }
 

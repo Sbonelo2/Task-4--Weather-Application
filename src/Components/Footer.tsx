@@ -1,13 +1,10 @@
-
-import { useTheme } from "../contexts/ThemeContext";
+import React from "react";
 
 export default function Footer() {
-  const { theme } = useTheme();
-  
   return (
     <div
       style={{
-        backgroundColor: theme === "dark" ? "#1a1a1a" : "black",
+        backgroundColor: "black",
         color: "white",
         textAlign: "center",
         padding: "1rem",
